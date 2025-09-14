@@ -1,4 +1,4 @@
-# 🎬 Movies Rating App
+# 🎬 Movies App
 
 A **React + Vite** project that shows movie details and ratings from the **IMDb API**.  
 Styled with **Bootstrap** and **React-Bootstrap** for a modern and responsive UI.
