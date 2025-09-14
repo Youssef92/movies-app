@@ -28,6 +28,6 @@ Styled with **Bootstrap** and **React-Bootstrap** for a modern and responsive UI
 Clone the repository:
 
 ```bash
-git clone https://github.com/Youssef92/movies-rating-app.git
+git clone https://github.com/Youssef92/movies-app.git
 cd movies-app
 ```
