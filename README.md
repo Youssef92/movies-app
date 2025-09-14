@@ -23,6 +23,13 @@ Styled with **Bootstrap** and **React-Bootstrap** for a modern and responsive UI
 
 ---
 
+## Notes
+
+- The project is currently **not fully responsive**.
+- Responsive design improvements are **in progress**.
+
+---
+
 ## 📦 Installation
 
 Clone the repository:
