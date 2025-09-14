@@ -1,0 +1,68 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import MovieDetails from "./pages/MovieDetails";
+import Wishlist from "./pages/Wishlist";
+import SearchResults from "./pages/SearchResults";
+import AppNavbar from "./components/AppNavbar";
+import NotFound from "./components/NotFound";
+import { AppProvider } from "./context/AppContext";
+import "./App.css";
+
+function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <AppNavbar />
+          <Home />
+        </>
+      ),
+    },
+    {
+      path: "/movie/:id",
+      element: (
+        <>
+          <AppNavbar />
+          <MovieDetails />
+        </>
+      ),
+    },
+    {
+      path: "/wishlist",
+      element: (
+        <>
+          <AppNavbar />
+          <Wishlist />
+        </>
+      ),
+    },
+    {
+      path: "/search/:query",
+      element: (
+        <>
+          <AppNavbar />
+          <SearchResults />
+        </>
+      ),
+    },
+    {
+      path: "*",
+      element: (
+        <>
+          <AppNavbar />
+          <NotFound />
+        </>
+      ),
+    },
+  ]);
+
+  return (
+    <AppProvider>
+      <RouterProvider router={router} />
+    </AppProvider>
+  );
+}
+
+export default App;
