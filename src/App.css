@@ -1,3 +1,80 @@
+/* Light Mode */
+body.light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
 
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.light .card {
+  background-color: white;
+  color: black;
+}
+
+body.dark .card {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+
+.movie-card {
+  margin-bottom: 20px; /* المسافة بين الكروت */
+}
+
+
+.img-dark {
+  filter: invert(1) brightness(0.8) contrast(0.9);
+}
+
+.responsive-img {
+  position:absolute;
+  top: 130px;
+  left: 510px;
+  width: 400px;
+  height: auto;
+}
+
+/* لما يكون عرض الشاشة أقل من 768px (موبايل) */
+@media (max-width: 768px) {
+  .responsive-img {
+    left:55px;
+    width: 200px;
+    height: auto;
+  }
+}
+
+
+
+
+/* الوضع الافتراضي (لابتوب) */
+.wishlist-empty-text {
+  position: absolute;
+  top: 540px;
+  left: 560px;
+  margin-top: 10px;
+}
+
+/* لو الشاشة أصغر من 768px (موبايل) */
+@media (max-width: 768px) { 
+  .wishlist-empty-text {
+    top: 350px;
+    left: 30px;
+  }
+}
+
+.btn-backtohome{
+  margin-left: 80px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .btn-backtohome{
+    margin-left: 55px;
+  }
+}
 
 

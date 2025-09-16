@@ -6,7 +6,7 @@ import { useContext } from "react";
 const IMG_BASE = "https://image.tmdb.org/t/p/w500";
 
 function MovieDetailsCard({ movie }) {
-  const { wishlist, toggleWishlist } = useContext(AppContext);
+  const { wishlist, toggleWishlist, theme } = useContext(AppContext);
 
   if (!movie) return null;
 
@@ -45,12 +45,14 @@ function MovieDetailsCard({ movie }) {
               {isInWishlist ? "❤️" : "🤍"}
             </button>
           </div>
-          <p className="text-muted">{movie.release_date}</p>
+          <p className={theme === "light" ? "text-muted" : "light"}>
+            {movie.release_date}
+          </p>
 
           {/* Rating*/}
           <div className="d-flex align-items-center mb-2">
             <StarRating voteAverage={movie.vote_average} />
-            <span className="ms-2">{movie.vote_count}</span>
+            <span className="ms-2">{movie.vote_count} votes</span>
           </div>
 
           <p>{movie.overview}</p>

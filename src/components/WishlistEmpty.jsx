@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import { IoHeartDislikeOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 function WishlistEmpty() {
+  const { theme } = useContext(AppContext);
+
   return (
     <div
       className="container-fluid my-4 d-flex justify-content-center align-items-center"
@@ -9,19 +12,30 @@ function WishlistEmpty() {
     >
       <div>
         <div>
-          <img src="Heart Slash.png" alt="" style={{ width: "400px" }} />
+          <img
+            src="Heart Slash.png"
+            alt=""
+            className={`responsive-img ${theme === "dark" ? "img-dark" : ""}`}
+          />{" "}
+          {/* style={{ width: "400px" }} */}
         </div>
 
-        <h3 className="fw-bold" style={{ marginLeft: "50px" }}>
-          No Movies in Watch list
-        </h3>
-        <Link
-          to="/"
-          className="btn btn-warning"
-          style={{ marginLeft: "130px", marginTop: "20px" }}
-        >
-          ⬅ Back to Home
-        </Link>
+        <div className="wishlist-empty-text">
+          <h3
+            className="fw-bold"
+            // style={{ marginLeft: "50px" }}
+          >
+            {" "}
+            No Movies in Watch list
+          </h3>
+          <Link
+            to="/"
+            className="btn btn-warning btn-backtohome"
+            // style={{ marginLeft: "80px", marginTop: "20px" }}
+          >
+            ⬅ Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   );

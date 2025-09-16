@@ -4,17 +4,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
-  // const [language, setLanguage] = useState("en");
-
-  // (optional)
-
-  // const addToWishlist = (movie) => {
-  //   setWishlist((prev) => [...prev, movie]);
-  // };
-
-  // const removeFromWishlist = (id) => {
-  //   setWishlist((prev) => prev.filter((m) => m.id !== id));
-  // };
+  const [theme, setTheme] = useState("light");
 
   const toggleWishlist = (movie) => {
     setWishlist((prev) => {
@@ -23,16 +13,17 @@ export const AppProvider = ({ children }) => {
     });
   };
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
   return (
     <AppContext.Provider
       value={{
         wishlist,
-        // language,
-        // setLanguage,
-        // (optional)
-        // addToWishlist,
-        // removeFromWishlist,
         toggleWishlist,
+        theme,
+        toggleTheme,
       }}
     >
       {children}

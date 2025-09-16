@@ -6,10 +6,17 @@ import Wishlist from "./pages/Wishlist";
 import SearchResults from "./pages/SearchResults";
 import AppNavbar from "./components/AppNavbar";
 import NotFound from "./components/NotFound";
-import { AppProvider } from "./context/AppContext";
+import { useContext, useEffect } from "react";
+import { AppContext } from "./context/AppContext";
 import "./App.css";
 
 function App() {
+  const { theme } = useContext(AppContext);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -58,11 +65,7 @@ function App() {
     },
   ]);
 
-  return (
-    <AppProvider>
-      <RouterProvider router={router} />
-    </AppProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

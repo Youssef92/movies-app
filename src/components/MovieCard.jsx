@@ -3,7 +3,7 @@ import { AppContext } from "../context/AppContext";
 import { Link } from "react-router-dom";
 
 function MovieCard({ movie }) {
-  const { wishlist, toggleWishlist } = useContext(AppContext);
+  const { wishlist, toggleWishlist, theme } = useContext(AppContext);
 
   const isInWishlist = wishlist.some((m) => m.id === movie.id);
 
@@ -16,7 +16,7 @@ function MovieCard({ movie }) {
   return (
     <Link to={`/movie/${movie.id}`} style={{ textDecoration: "none" }}>
       <div
-        className="card h-auto"
+        className="card h-100"
         style={{
           border: "none",
         }}
@@ -57,7 +57,7 @@ function MovieCard({ movie }) {
                 r="18"
                 stroke={borderColor}
                 strokeWidth="4"
-                fill="transparent"
+                fill="black"
                 strokeDasharray={2 * Math.PI * 18}
                 strokeDashoffset={
                   2 * Math.PI * 18 * (1 - ratingPercentage / 100)
@@ -79,9 +79,11 @@ function MovieCard({ movie }) {
           </div>
         </div>
         <div className="card-body d-flex justify-content-between align-items-center">
-          <div>
+          <div className="DetailsCard">
             <h5 className="card-title">{movie.title}</h5>
-            <span className="text-muted">{movie.release_date || "N/A"}</span>
+            <span className={theme === "light" ? "text-muted" : "light"}>
+              {movie.release_date || "N/A"}
+            </span>
           </div>
           <div>
             <button
