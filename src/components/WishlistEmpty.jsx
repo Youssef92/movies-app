@@ -17,22 +17,11 @@ function WishlistEmpty() {
             alt=""
             className={`responsive-img ${theme === "dark" ? "img-dark" : ""}`}
           />{" "}
-          {/* style={{ width: "400px" }} */}
         </div>
 
         <div className="wishlist-empty-text">
-          <h3
-            className="fw-bold"
-            // style={{ marginLeft: "50px" }}
-          >
-            {" "}
-            No Movies in Watch list
-          </h3>
-          <Link
-            to="/"
-            className="btn btn-warning btn-backtohome"
-            // style={{ marginLeft: "80px", marginTop: "20px" }}
-          >
+          <h3 className="fw-bold"> No Movies in Watch list</h3>
+          <Link to="/home" className="btn btn-warning btn-backtohome">
             ⬅ Back to Home
           </Link>
         </div>
