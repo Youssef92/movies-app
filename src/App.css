@@ -38,7 +38,6 @@ body.dark .card {
   height: auto;
 }
 
-/* لما يكون عرض الشاشة أقل من 768px (موبايل) */
 @media (max-width: 768px) {
   .responsive-img {
     left:55px;
@@ -50,7 +49,6 @@ body.dark .card {
 
 
 
-/* الوضع الافتراضي (لابتوب) */
 .wishlist-empty-text {
   position: absolute;
   top: 540px;
@@ -58,7 +56,6 @@ body.dark .card {
   margin-top: 10px;
 }
 
-/* لو الشاشة أصغر من 768px (موبايل) */
 @media (max-width: 768px) { 
   .wishlist-empty-text {
     top: 350px;

@@ -3,7 +3,7 @@ import { BiCameraMovie } from "react-icons/bi";
 import { AppContext } from "../context/AppContext";
 import { useContext } from "react";
 
-function NotFound({ message = "No movies found!" }) {
+function NotFound() {
   const { theme } = useContext(AppContext);
 
   return (
@@ -13,7 +13,7 @@ function NotFound({ message = "No movies found!" }) {
     >
       <BiCameraMovie size={120} color="#ccc" className="mb-3" />
 
-      <h3 className="fw-bold mb-2">{message}</h3>
+      <h3 className="fw-bold mb-2">No movies found!</h3>
       <p className={theme === "light" ? "text-muted mb-4" : "light mb-4"}>
         We couldn’t find any results matching your search.
       </p>

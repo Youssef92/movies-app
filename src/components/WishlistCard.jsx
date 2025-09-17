@@ -3,10 +3,10 @@ import { AppContext } from "../context/AppContext";
 import StarRating from "./StarRating";
 
 function WishlistCard({ movie }) {
-  const { toggleWishlist } = useContext(AppContext);
+  const { toggleWishlist, theme } = useContext(AppContext);
 
   return (
-    <div className="mb-3 shadow pt-3" style={{ backgroundColor: "#eee" }}>
+    <div className="mb-3 shadow pt-3">
       <div className="row g-4">
         <div className="col-4">
           <img
@@ -18,21 +18,15 @@ function WishlistCard({ movie }) {
         </div>
         <div className="col-8">
           <div className="card-body">
-            <div
-              className="d-flex justify-content-between align-items-start"
-              // style={{ position: "relative" }}
-            >
+            <div className="d-flex justify-content-between align-items-start">
               <h5 className="card-title fw-bold">{movie.title}</h5>
               <button
                 className="btn "
                 style={{
-                  // position: "absolute",
                   background: "none",
                   border: "none",
                   fontSize: "1.5rem",
                   color: "gold",
-                  // top: "1px",
-                  // left: "400px",
                 }}
                 onClick={() => toggleWishlist(movie)}
               >
@@ -40,7 +34,10 @@ function WishlistCard({ movie }) {
               </button>
             </div>
 
-            <p className="text-muted mb-1" style={{ fontSize: "0.9rem" }}>
+            <p
+              className={theme === "light" ? "text-muted mb-1" : "light mb-1"}
+              style={{ fontSize: "0.9rem" }}
+            >
               {movie.release_date || "N/A"}
             </p>
             <div className="d-flex align-items-center mb-2">

@@ -9,6 +9,8 @@ import NotFound from "./components/NotFound";
 import { useContext, useEffect } from "react";
 import { AppContext } from "./context/AppContext";
 import "./App.css";
+import LogIn from "./pages/LogIn";
+import Registration from "./pages/Registration";
 
 function App() {
   const { theme } = useContext(AppContext);
@@ -24,6 +26,22 @@ function App() {
         <>
           <AppNavbar />
           <Home />
+        </>
+      ),
+    },
+    {
+      path: "/login",
+      element: (
+        <>
+          <LogIn />
+        </>
+      ),
+    },
+    {
+      path: "/registration",
+      element: (
+        <>
+          <Registration />
         </>
       ),
     },
