@@ -11,6 +11,7 @@ function Registration() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [allData, setAllData] = useState(() => {
     const saved = localStorage.getItem("formDataList");
@@ -117,7 +118,7 @@ function Registration() {
           </label>
           <div className="input-group">
             <input
-              type={showPassword ? "text" : "password"}
+              type={showConfirmPassword ? "text" : "password"}
               className="form-control"
               style={{ borderRight: "none" }}
               value={confirmPassword}
@@ -127,9 +128,9 @@ function Registration() {
             <span
               className="input-group-text bg-white"
               style={{ cursor: "pointer", borderLeft: "none" }}
-              onClick={() => setShowPassword(!showPassword)}
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
             >
-              {showPassword ? <PiEyeSlash /> : <PiEyeLight />}
+              {showConfirmPassword ? <PiEyeSlash /> : <PiEyeLight />}
             </span>
           </div>
           {errorMessage && (
