@@ -11,6 +11,7 @@ import { AppContext } from "./context/AppContext";
 import "./App.css";
 import LogIn from "./pages/LogIn";
 import Registration from "./pages/Registration";
+import ShowError from "./components/ShowError";
 
 function App() {
   const { theme } = useContext(AppContext);
@@ -76,8 +77,7 @@ function App() {
       path: "*",
       element: (
         <>
-          <AppNavbar />
-          <NotFound />
+          <ShowError />
         </>
       ),
     },

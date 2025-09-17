@@ -18,7 +18,7 @@ function NotFound() {
         We couldn’t find any results matching your search.
       </p>
 
-      <Link to="/" className="btn btn-warning">
+      <Link to="/home" className="btn btn-warning">
         ⬅ Back to Home
       </Link>
     </div>
