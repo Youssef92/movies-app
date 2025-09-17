@@ -93,7 +93,7 @@ function Registration() {
           </label>
           <div className="input-group">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="form-control"
               style={{ borderRight: "none" }}
               name="password"
@@ -117,7 +117,7 @@ function Registration() {
           </label>
           <div className="input-group">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="form-control"
               style={{ borderRight: "none" }}
               value={confirmPassword}
