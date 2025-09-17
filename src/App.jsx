@@ -24,16 +24,16 @@ function App() {
       path: "/",
       element: (
         <>
-          <AppNavbar />
-          <Home />
+          <LogIn />
         </>
       ),
     },
     {
-      path: "/login",
+      path: "/home",
       element: (
         <>
-          <LogIn />
+          <AppNavbar />
+          <Home />
         </>
       ),
     },

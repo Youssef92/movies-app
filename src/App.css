@@ -22,7 +22,7 @@ body.dark .card {
 
 
 .movie-card {
-  margin-bottom: 20px; /* المسافة بين الكروت */
+  margin-bottom: 20px; 
 }
 
 
@@ -47,6 +47,13 @@ body.dark .card {
 }
 
 
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #ced4da;
+  outline: none;
+  box-shadow: none;
+}
 
 
 .wishlist-empty-text {
