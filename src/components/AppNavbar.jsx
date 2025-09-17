@@ -17,7 +17,11 @@ function AppNavbar() {
       className="shadow-sm py-1 w-100"
     >
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+        <Navbar.Brand
+          as={Link}
+          to="/home"
+          className="d-flex align-items-center"
+        >
           <BiSolidCameraMovie size={24} />
           <span className="ms-2 fw-bold fs-6">MOVIE APP</span>
         </Navbar.Brand>

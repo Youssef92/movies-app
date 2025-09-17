@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { PiEyeLight, PiEyeSlash } from "react-icons/pi";
 
 function Registration() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ function Registration() {
   });
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const [allData, setAllData] = useState(() => {
     const saved = localStorage.getItem("formDataList");
@@ -89,27 +91,47 @@ function Registration() {
           <label className="form-label">
             <span style={{ color: "red" }}>*</span> Password
           </label>
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-group">
+            <input
+              type="password"
+              className="form-control"
+              style={{ borderRight: "none" }}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <span
+              className="input-group-text bg-white"
+              style={{ cursor: "pointer", borderLeft: "none" }}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <PiEyeSlash /> : <PiEyeLight />}
+            </span>
+          </div>
         </div>
 
         <div className="mb-3">
           <label className="form-label">
             <span style={{ color: "red" }}>*</span> Confirm Password
           </label>
-          <input
-            type="password"
-            className="form-control"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
+          <div className="input-group">
+            <input
+              type="password"
+              className="form-control"
+              style={{ borderRight: "none" }}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <span
+              className="input-group-text bg-white"
+              style={{ cursor: "pointer", borderLeft: "none" }}
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <PiEyeSlash /> : <PiEyeLight />}
+            </span>
+          </div>
           {errorMessage && (
             <small style={{ color: "red" }}>{errorMessage}</small>
           )}
