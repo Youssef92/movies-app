@@ -43,7 +43,7 @@ function Registration() {
     setFormData({ name: "", email: "", password: "" });
     setConfirmPassword("");
 
-    navigate("/login");
+    navigate("/");
   };
 
   return (

@@ -31,7 +31,7 @@ function LogIn() {
       return;
     }
 
-    navigate("/");
+    navigate("/home");
   };
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
